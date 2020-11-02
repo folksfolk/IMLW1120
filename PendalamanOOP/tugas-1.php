@@ -17,9 +17,9 @@
         abstract public function getInfoHewan();
 
         public function getInfo(){
-            $str =  "Nama: $this->nama" . "\n" .
-                    "Darah: $this->darah" . "\n" .
-                    "Jumlah Kaki: $this->jumlahKaki" . "\n" .
+            $str =  "Nama: $this->nama" . "<br>" .
+                    "Darah: $this->darah" . "<br>" .
+                    "Jumlah Kaki: $this->jumlahKaki" . "<br>" .
                     "Keahlian: $this->keahlian" . "\n";
             return $str;
         }
@@ -29,15 +29,15 @@
         public $attackPower, $deffencePower;
 
         public function serang($hewan){
-            echo "$this->nama sedang menyerang $hewan->nama" . "\n";
+            echo "$this->nama sedang menyerang $hewan->nama" . "<br>";
             $hewan->diserang($this);
         }
 
         public function diserang($hewan){
-            echo "$this->nama sedang diserang $hewan->nama" . "\n";
+            echo "$this->nama sedang diserang $hewan->nama" . "<br>";
             $this->darah = $this->darah - ($hewan->attackPower / $this->deffencePower);
 
-            echo "Darah: $this->nama tersisa $this->darah" . "\n";
+            echo "Darah: $this->nama tersisa $this->darah" . "<br>";
         }
     }
 
@@ -53,10 +53,10 @@
         }
 
         public function getInfoHewan(){
-            $str =  " HARIMAU " . "\n" . 
-                    parent::getInfo() . "\n" .
-                    "Attack Power: $this->attackPower" . "\n" .
-                    "Deffence Power: $this->deffencePower" . "\n";
+            $str =  " HARIMAU " . "<br>" . 
+                    parent::getInfo() . "<br>" .
+                    "Attack Power: $this->attackPower" . "<br>" .
+                    "Deffence Power: $this->deffencePower" . "<br>";
             return $str;
         }
     }
@@ -73,21 +73,30 @@
         }
 
         public function getInfoHewan(){
-            $str =  " Elang " . "\n" . 
-                    parent::getInfo() . "\n" .
-                    "Attack Power: $this->attackPower" . "\n" .
-                    "Deffence Power: $this->deffencePower" . "\n";
+            $str =  " Elang " . "<br>" . 
+                    parent::getInfo() . "<br>" .
+                    "Attack Power: $this->attackPower" . "<br>" .
+                    "Deffence Power: $this->deffencePower" . "<br>";
             return $str;
         }
     }
 
     $elang_1 = new Elang("Elang Emas");
     echo $elang_1->atraksi() . "\n";
-    $elang_1->serang($harimau_1) . "\n";
-    echo $elang_1->getInfoHewan();
+    echo "<br>";
     
     $harimau_1 = new Harimau("Harimau Sri Langka");
     echo $harimau_1->atraksi() . "\n";
+    echo "<br>";
+    echo "<br>";
+
     $harimau_1->serang($elang_1) . "\n";
+    echo "<br>";
+    echo $elang_1->getInfoHewan();
+    echo "<br>";
+    echo "<br>";
+
+    $elang_1->serang($harimau_1) . "\n";
+    echo "<br>";
     echo $elang_1->getInfoHewan();
 ?>
