@@ -53,7 +53,7 @@
         }
 
         public function getInfoHewan(){
-            $str =  " HARIMAU " . "<br>" . 
+            $str =  " Harimau " . "<br>" . 
                     parent::getInfo() . "<br>" .
                     "Attack Power: $this->attackPower" . "<br>" .
                     "Deffence Power: $this->deffencePower" . "<br>";
@@ -98,5 +98,5 @@
 
     $elang_1->serang($harimau_1) . "\n";
     echo "<br>";
-    echo $elang_1->getInfoHewan();
+    echo $harimau_1->getInfoHewan();
 ?>
